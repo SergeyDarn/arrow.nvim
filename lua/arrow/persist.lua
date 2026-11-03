@@ -88,7 +88,7 @@ end
 
 function M.is_saved(filename)
 	for i, arrow_file in ipairs(vim.g.arrow_filenames) do
-		local match_found = string.find(arrow_file, filename, 1)
+		local match_found = arrow_file == filename or string.find(arrow_file, filename, 1)
 
 		if match_found then
 			return i
